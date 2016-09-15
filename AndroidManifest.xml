@@ -3319,6 +3319,10 @@
                 android:resource="@string/discovery_settings_summary" />
         </activity>
 
+        <!-- Battery and notification lights -->
+        <activity android:name="com.discovery.settings.fragments.batterylight.NotificationLightSettings" />
+        <activity android:name="com.discovery.settings.fragments.batterylight.BatteryLightSettings" />
+
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
 </manifest>
