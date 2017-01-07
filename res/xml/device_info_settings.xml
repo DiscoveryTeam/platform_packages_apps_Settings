@@ -23,6 +23,16 @@
                           android:enabled="false"
                           android:layout="@layout/discovery_logo_row" />
 
+        <!-- Discovery OTA -->
+        <PreferenceScreen
+            android:key="discovery_ota"
+            android:icon="@drawable/ic_discoveryota"
+            android:title="@string/discovery_ota_title">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="org.discovery.ota"
+                    android:targetClass="org.discovery.ota.activities.MainActivity" />
+        </PreferenceScreen>
+
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
                 android:title="@string/device_status"
