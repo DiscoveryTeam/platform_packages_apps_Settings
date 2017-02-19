@@ -164,4 +164,5 @@ public class Settings extends SettingsActivity {
     // Discovery.
     public static class DiscoverySettingsActivity extends SettingsActivity { /* empty */ }
     public static class SubstratumActivity extends SettingsActivity { /* empty */ }
+    public static class SuperSUActivity extends SettingsActivity { /* empty */ }
 }
