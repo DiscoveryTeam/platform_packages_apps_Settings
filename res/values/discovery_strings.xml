@@ -25,4 +25,10 @@
     <!-- Dev Options Enabled by Default -->
     <string name="show_dev_already_enabled">No Need, Development settings are enabled by default.</string>
 
+    <!-- Discovery version -->
+    <string name="discovery_version">Discovery version</string>
+    <string name="discovery_modversion">Discovery Mod Version</string>
+    <string name="discovery_date_version">Discovery release date</string>
+    <string name="discovery_version_default">Unknown</string>
+
 </resources>

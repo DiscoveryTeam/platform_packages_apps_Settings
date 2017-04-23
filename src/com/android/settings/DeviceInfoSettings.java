@@ -71,6 +71,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
     private static final String KEY_DEVICE_FEEDBACK = "device_feedback";
     private static final String KEY_SAFETY_LEGAL = "safetylegal";
+    private static final String KEY_DISCOVERY_VERSION = "discovery_version";
+    private static final String KEY_DISCOVERY_MODVERSION = "discovery_modversion";
+    private static final String KEY_DISCOVERY_DATE_VERSION = "discovery_date_version";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -118,6 +121,12 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL);
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
+        setValueSummary(KEY_DISCOVERY_VERSION, "ro.discovery.version");
+        findPreference(KEY_DISCOVERY_VERSION).setEnabled(true);
+        setValueSummary(KEY_DISCOVERY_MODVERSION, "ro.modversion");
+        findPreference(KEY_DISCOVERY_MODVERSION).setEnabled(true);
+        setValueSummary(KEY_DISCOVERY_DATE_VERSION, "ro.discovery.date");
+        findPreference(KEY_DISCOVERY_DATE_VERSION).setEnabled(true);
         findPreference(KEY_KERNEL_VERSION).setSummary(DeviceInfoUtils.getFormattedKernelVersion());
 
         if (!SELinux.isSELinuxEnabled()) {
