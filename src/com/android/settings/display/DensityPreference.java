@@ -26,6 +26,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.android.settings.R;
+import com.android.settings.Utils;
 import com.android.settingslib.CustomEditTextPreference;
 import com.android.settingslib.display.DisplayDensityUtils;
 
@@ -63,6 +64,7 @@ public class DensityPreference extends CustomEditTextPreference {
         if (editText != null) {
             editText.setInputType(InputType.TYPE_CLASS_NUMBER);
             editText.setText(getCurrentSwDp() + "");
+            Utils.setEditTextCursorPosition(editText);
         }
     }
 
