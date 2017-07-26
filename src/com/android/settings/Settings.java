@@ -156,13 +156,13 @@ public class Settings extends SettingsActivity {
 
     // Categories.
     public static class WirelessSettings extends SettingsActivity { /* empty */ }
-    public static class DiscoverySettings extends SettingsActivity { /* empty */ }
+  public static class DiscoveryHome extends SettingsActivity { /* empty */ }
     public static class DeviceSettings extends SettingsActivity { /* empty */ }
     public static class PersonalSettings extends SettingsActivity { /* empty */ }
     public static class SystemSettings extends SettingsActivity { /* empty */ }
 
     // Discovery.
-    public static class DiscoverySettingsActivity extends SettingsActivity { /* empty */ }
+    public static class DiscoveryHomeActivity extends SettingsActivity { /* empty */ }
     public static class SubstratumActivity extends SettingsActivity { /* empty */ }
     public static class SuperSUActivity extends SettingsActivity { /* empty */ }
     public static class MagiskActivity extends SettingsActivity { /* empty */ }

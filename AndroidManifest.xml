@@ -135,8 +135,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Settings$DiscoverySettings"
-            android:label="@string/header_category_discovery">
+        <activity android:name=".Settings$DiscoveryHome"
+            android:label="@string/header_category_discovery"
+            android:theme="@style/Theme.DiscoverySettings">
             <intent-filter android:priority="4">
                 <action android:name="com.android.settings.category.discovery" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -946,7 +947,7 @@
                 android:value="true" />
         </activity>
 
-        <activity android:name="Settings$DiscoverySettingsActivity"
+        <activity android:name="Settings$DiscoveryHomeActivity"
             android:label="@string/discovery_settings"
             android:icon="@drawable/ic_settings_discovery"
             android:taskAffinity="">
@@ -962,7 +963,7 @@
             <meta-data android:name="com.android.settings.category"
                 android:value="com.android.settings.category.discovery" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.discovery.settings.DiscoverySettings" />
+                android:value="com.discovery.settings.DiscoveryHome" />
             <meta-data android:name="com.android.settings.summary"
                 android:resource="@string/discovery_settings_summary" />
         </activity>
@@ -981,7 +982,7 @@
                 <action android:name="com.android.settings.action.SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
-                android:value="com.android.settings.category.discovery" />            
+                android:value="com.android.settings.category.discovery" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.Substratum" />
         </activity>

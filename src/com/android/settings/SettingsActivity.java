@@ -134,7 +134,7 @@ import com.android.settingslib.drawer.DashboardCategory;
 import com.android.settingslib.drawer.SettingsDrawerActivity;
 import com.android.settingslib.drawer.Tile;
 
-import com.discovery.settings.DiscoverySettings;
+import com.discovery.settings.DiscoveryHome;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -246,7 +246,7 @@ public class SettingsActivity extends SettingsDrawerActivity
             Settings.SimSettingsActivity.class.getName(),
             Settings.WirelessSettingsActivity.class.getName(),
             //discovery_section
-            DiscoverySettings.class.getName(),
+            DiscoveryHome.class.getName(),
             //device_section
             Settings.HomeSettingsActivity.class.getName(),
             Settings.SoundSettingsActivity.class.getName(),
@@ -366,7 +366,7 @@ public class SettingsActivity extends SettingsDrawerActivity
             NightDisplaySettings.class.getName(),
             ManageDomainUrls.class.getName(),
             AutomaticStorageManagerSettings.class.getName(),
-            DiscoverySettings.class.getName()
+            DiscoveryHome.class.getName()
     };
 
 
@@ -558,7 +558,7 @@ public class SettingsActivity extends SettingsDrawerActivity
 
         mIsShowingDashboard = className.equals(Settings.class.getName())
                 || className.equals(Settings.WirelessSettings.class.getName())
-                || className.equals(Settings.DiscoverySettings.class.getName())
+                || className.equals(Settings.DiscoveryHome.class.getName())
                 || className.equals(Settings.DeviceSettings.class.getName())
                 || className.equals(Settings.PersonalSettings.class.getName())
                 || className.equals(Settings.WirelessSettings.class.getName());
@@ -1023,7 +1023,7 @@ public class SettingsActivity extends SettingsDrawerActivity
      */
     private Fragment switchToFragment(String fragmentName, Bundle args, boolean validate,
             boolean addToBackStack, int titleResId, CharSequence title, boolean withTransition) {
-        
+
         if (SUBSTRATUM_FRAGMENT.equals(fragmentName)) {
             Intent substratumIntent = new Intent();
             substratumIntent.setClassName("projekt.substratum", "projekt.substratum.LaunchActivity");
