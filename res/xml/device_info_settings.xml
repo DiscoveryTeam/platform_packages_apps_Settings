@@ -33,6 +33,12 @@
                     android:targetClass="org.discovery.ota.activities.MainActivity" />
         </PreferenceScreen>
 
+        <!-- Changelog -->
+        <PreferenceScreen
+            android:key="changelog"
+            android:title="@string/changelog_title"
+            android:fragment="com.android.settings.discovery.Changelog" />
+
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
                 android:title="@string/device_status"
