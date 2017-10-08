@@ -178,4 +178,7 @@ public class Settings extends SettingsActivity {
     public static class SystemDashboardActivity extends SettingsActivity {}
     public static class SupportDashboardActivity extends SettingsActivity {}
 
+    // Discovery Additions.
+    public static class DiscoveryHomeActivity extends SettingsActivity {}
+
 }
