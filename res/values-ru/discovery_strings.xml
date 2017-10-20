@@ -99,4 +99,7 @@
     <!-- Vendor version -->
     <string name="vendor_version">Версия Vendor</string>
     <string name="vendor_version_default">Неизвестно</string>
+
+    <string name="decryption_settings_summary" product="default">Телефон не зашифрован</string>
+    <string name="decryption_settings_summary" product="tablet">Устройство не зашифровано</string>
 </resources>
