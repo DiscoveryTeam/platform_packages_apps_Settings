@@ -49,7 +49,7 @@ public class GestureSettings extends DashboardFragment {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.SETTINGS_GESTURES;
+        return MetricsProto.MetricsEvent.DISCOVERY_SETTINGS;
     }
 
     @Override
