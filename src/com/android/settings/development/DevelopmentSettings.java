@@ -267,7 +267,6 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
     private boolean mOtaDisabledOnce = false;
 
-    private SwitchPreference mEnableAdb;
     private Preference mClearAdbKeys;
     private SwitchPreference mEnableTerminal;
     private RestrictedSwitchPreference mKeepScreenOn;
@@ -1060,10 +1059,6 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
                 && !mUm.hasBaseUserRestriction(UserManager.DISALLOW_FACTORY_RESET, userHandle);
     }
     
-    private static boolean showEnableOemUnlockPreference() {
-        return !SystemProperties.get(PERSISTENT_DATA_BLOCK_PROP).equals("");
-    }
-
     private boolean enableOemUnlockPreference() {
         return !isBootloaderUnlocked() && isOemUnlockAllowedByUserAndCarrier();
     }
