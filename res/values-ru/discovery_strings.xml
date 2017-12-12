@@ -96,10 +96,6 @@
     <string name="app_ops_answer_phone_calls">ответ на звонок</string>
     <string name="app_ops_boot_completed">автозагрузка</string>
 
-    <!-- Vendor version -->
-    <string name="vendor_version">Версия Vendor</string>
-    <string name="vendor_version_default">Неизвестно</string>
-
     <string name="decryption_settings_summary" product="default">Телефон не зашифрован</string>
     <string name="decryption_settings_summary" product="tablet">Устройство не зашифровано</string>
 </resources>

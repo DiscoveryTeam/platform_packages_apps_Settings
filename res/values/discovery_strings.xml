@@ -98,10 +98,6 @@
     <string name="app_ops_answer_phone_calls">answer calls</string>
     <string name="app_ops_boot_completed">auto start</string>
 
-    <!-- Vendor version -->
-    <string name="vendor_version">Vendor version</string>
-    <string name="vendor_version_default">Unknown</string>
-
     <string name="decryption_settings_summary" product="default">Phone decrypted</string>
     <string name="decryption_settings_summary" product="tablet">Device decrypted</string>
 
@@ -124,4 +120,5 @@
     <!-- Changelog -->
     <string name="changelog_title">Changelog</string>
     <string name="changelog_error">Unable to load changelog</string>
+
 </resources>
