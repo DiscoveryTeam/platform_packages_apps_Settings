@@ -23,6 +23,7 @@ import static com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
@@ -38,6 +39,7 @@ import android.os.PersistableBundle;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.os.storage.StorageManager;
+import android.os.SystemProperties;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.service.trust.TrustAgentService;
@@ -76,6 +78,7 @@ import com.android.settings.security.OwnerInfoPreferenceController;
 import com.android.settings.security.SecurityFeatureProvider;
 import com.android.settings.trustagent.TrustAgentManager;
 import com.android.settings.widget.GearPreference;
+import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.RestrictedLockUtils;
 import com.android.settingslib.RestrictedPreference;
 import com.android.settingslib.drawer.CategoryKey;
@@ -127,6 +130,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     // Security status
     private static final String KEY_SECURITY_STATUS = "security_status";
     private static final String SECURITY_STATUS_KEY_PREFIX = "security_status_";
+    private static final String KEY_SECURITY_PATCH = "security_patch";
 
     // Package verifier Settings
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
@@ -193,6 +197,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
         super.onCreate(savedInstanceState);
 
         final Activity activity = getActivity();
+        final Context context = getPrefContext();
 
         mSubscriptionManager = SubscriptionManager.from(activity);
 
@@ -279,7 +284,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
         root = getPreferenceScreen();
 
         // Add category for security status
-        addPreferencesFromResource(R.xml.security_settings_status);
+        addPreferencesFromResource(R.xml.security_settings_status);                
 
         // Add options for lock/unlock screen
         final int resid = getResIdForLockUnlockScreen(getActivity(), mLockPatternUtils,
@@ -390,7 +395,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
         final List<Preference> tilePrefs = mDashboardFeatureProvider.getPreferencesForCategory(
             getActivity(), getPrefContext(), getMetricsCategory(),
             CategoryKey.CATEGORY_SECURITY);
-        int numSecurityStatusPrefs = 0;
+            setValueSummary(KEY_SECURITY_PATCH, "ro.build.version.security_patch");
+            findPreference(KEY_SECURITY_PATCH).setEnabled(true);
+	int numSecurityStatusPrefs = 0;
         if (tilePrefs != null && !tilePrefs.isEmpty()) {
             for (Preference preference : tilePrefs) {
                 if (!TextUtils.isEmpty(preference.getKey())
@@ -401,8 +408,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
                     numSecurityStatusPrefs++;
                 } else {
                     // Other injected settings are placed under the Security preference screen.
-                    root.addPreference(preference);
-                }
+		    root.addPreference(preference);
+		}
             }
         }
 
@@ -1286,6 +1293,16 @@ public class SecuritySettings extends SettingsPreferenceFragment
                         R.string.security_dashboard_summary_no_fingerprint));
                 }
             }
+        }
+    }
+
+    private void setValueSummary(String preference, String property) {
+        try {
+            findPreference(preference).setSummary(
+                    SystemProperties.get(property,
+                            getResources().getString(R.string.device_info_default)));
+        } catch (RuntimeException e) {
+            // No recovery
         }
     }
 
