@@ -98,4 +98,9 @@
 
     <string name="decryption_settings_summary" product="default">Телефон не зашифрован</string>
     <string name="decryption_settings_summary" product="tablet">Устройство не зашифровано</string>
+
+    <string name="systemui_theme_style_title">Стиль оформления</string>
+    <string name="systemui_theme_style_auto">Авто (по обоям)</string>
+    <string name="systemui_theme_style_light">Светлый</string>
+    <string name="systemui_theme_style_dark">Темный</string>
 </resources>
