@@ -163,5 +163,9 @@
     <string name="android_functional_updates_title">Functional updates</string>
     <string name="android_functional_updates_summary">In addition to AOSP security updates, we include Google\'s functional updates. These are patches that Google push in addition to security updates for Pixel devices to address functionality issues such as connectivity, stability, and performance. Since we support more than just Pixel devices, they are included for all our devices.</string>
     <string name="vendor_security_title">Vendor patch level</string>
+
+    <!-- Proximity wake -->
+   <string name="proximity_wake_title">Prevent accidental wake-up</string>
+   <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
     
 </resources>
