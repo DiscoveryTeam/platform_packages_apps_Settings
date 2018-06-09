@@ -17,6 +17,9 @@
     <string name="discovery_version">Discovery version</string>
     <string name="discovery_version_default">Unknown</string>
 
+    <!-- About phone screen, device maintainer -->
+    <string name="maintainer_info">Device maintainer</string>
+
     <!-- About phone screen, build date -->
     <string name="build_date">Build date</string>
     <string name="build_date_default">2015-01-01-0000</string>

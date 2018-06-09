@@ -73,6 +73,12 @@
                 android:title="@string/model_info"
                 android:summary="@string/summary_placeholder"/>
 
+        <!-- Device maintainer -->
+        <Preference
+                android:key="device_maintainer"
+                android:title="@string/maintainer_info"
+                android:summary="@string/summary_placeholder"/>
+
         <!-- Device firmware version -->
         <Preference android:key="firmware_version"
                 android:title="@string/firmware_version"
